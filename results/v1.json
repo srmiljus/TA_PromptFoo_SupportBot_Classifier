@@ -1,0 +1,343 @@
+{
+  "evalId": "eval-fsR-2026-11-19T16:54:12",
+  "results": {
+    "version": 3,
+    "timestamp": "2026-11-19T16:54:12.214Z",
+    "prompts": [
+      {
+        "raw": "You are an AI support classifier. Analyze the user's message and assign a Category and Priority.\n\nCategories available: BUG, BILLING, FEATURE, QUESTION.\nPriorities available: CRITICAL, HIGH, LOW.\n\nInstructions:\n1. Read the user message carefully: {{user_message}}\n2. Choose the best Category.\n3. Choose the Priority based on the tone and severity of the message.\n\nOutput ONLY valid JSON.\nDo NOT wrap the response in markdown blocks. Do NOT use ```json or ``` tags. Just output the raw JSON object.\nFormat: {\"category\": \"...\", \"priority\": \"...\"}",
+        "label": "prompts\\v1.txt: You are an AI support classifier. Analyze the user's message and assign a Category and Priority.\n\nCategories available: BUG, BILLING, FEATURE, QUESTION.\nPriorities available: CRITICAL, HIGH, LOW.\n\nInstructions:\n1. Read the user message carefully: {{user_message}}\n2. Choose the best Category.\n3. Choose the Priority based on the tone and severity of the message.\n\nOutput ONLY valid JSON.\nDo NOT wrap the response in markdown blocks. Do NOT use ```json or ``` tags. Just output the raw JSON object.\nFormat: {\"category\": \"...\", \"priority\": \"...\"}",
+        "id": "767dafa84664320230aad6ddc0cd84af6c3ac1261af65f9c7b910c629130ef52",
+        "provider": "bedrock:us.anthropic.claude-haiku-4-5-20251001-v1:0",
+        "metrics": {
+          "score": 1,
+          "testPassCount": 1,
+          "testFailCount": 2,
+          "testErrorCount": 0,
+          "assertPassCount": 1,
+          "assertFailCount": 2,
+          "totalLatencyMs": 5050,
+          "tokenUsage": {
+            "prompt": 481,
+            "completion": 52,
+            "cached": 0,
+            "total": 533,
+            "numRequests": 3,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0
+              }
+            }
+          },
+          "namedScores": {},
+          "namedScoresCount": {},
+          "cost": 0
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Correct: BUG / CRITICAL"
+            }
+          ]
+        },
+        "id": "536cc1d9-2c92-483d-8258-811bd1307a9a",
+        "latencyMs": 1634,
+        "namedScores": {},
+        "prompt": {
+          "raw": "You are an AI support classifier. Analyze the user's message and assign a Category and Priority.\n\nCategories available: BUG, BILLING, FEATURE, QUESTION.\nPriorities available: CRITICAL, HIGH, LOW.\n\nInstructions:\n1. Read the user message carefully: I can't log in, getting a 500 error on the main screen.\n2. Choose the best Category.\n3. Choose the Priority based on the tone and severity of the message.\n\nOutput ONLY valid JSON.\nDo NOT wrap the response in markdown blocks. Do NOT use ```json or ``` tags. Just output the raw JSON object.\nFormat: {\"category\": \"...\", \"priority\": \"...\"}",
+          "label": "prompts\\v1.txt: You are an AI support classifier. Analyze the user's message and assign a Category and Priority.\n\nCategories available: BUG, BILLING, FEATURE, QUESTION.\nPriorities available: CRITICAL, HIGH, LOW.\n\nInstructions:\n1. Read the user message carefully: {{user_message}}\n2. Choose the best Category.\n3. Choose the Priority based on the tone and severity of the message.\n\nOutput ONLY valid JSON.\nDo NOT wrap the response in markdown blocks. Do NOT use ```json or ``` tags. Just output the raw JSON object.\nFormat: {\"category\": \"...\", \"priority\": \"...\"}",
+          "config": {}
+        },
+        "promptId": "767dafa84664320230aad6ddc0cd84af6c3ac1261af65f9c7b910c629130ef52",
+        "promptIdx": 0,
+        "provider": {
+          "id": "bedrock:us.anthropic.claude-haiku-4-5-20251001-v1:0",
+          "label": ""
+        },
+        "response": {
+          "output": "{\"category\": \"BUG\", \"priority\": \"CRITICAL\"}",
+          "tokenUsage": {
+            "prompt": 158,
+            "completion": 18,
+            "total": 176,
+            "numRequests": 1
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "user_message": "I can't log in, getting a 500 error on the main screen.",
+            "expected_category": "BUG",
+            "expected_priority": "CRITICAL"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://assertions/classification.js"
+            }
+          ],
+          "options": {},
+          "description": "Row #1",
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "vars": {
+          "user_message": "I can't log in, getting a 500 error on the main screen.",
+          "expected_category": "BUG",
+          "expected_priority": "CRITICAL"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "error": "Expected priority \"HIGH\", got \"CRITICAL\"",
+        "gradingResult": {
+          "pass": false,
+          "score": 0,
+          "reason": "Expected priority \"HIGH\", got \"CRITICAL\"",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Expected priority \"HIGH\", got \"CRITICAL\""
+            }
+          ]
+        },
+        "id": "2559dab9-628b-47dd-9da9-99673e0593f1",
+        "latencyMs": 1736,
+        "namedScores": {},
+        "prompt": {
+          "raw": "You are an AI support classifier. Analyze the user's message and assign a Category and Priority.\n\nCategories available: BUG, BILLING, FEATURE, QUESTION.\nPriorities available: CRITICAL, HIGH, LOW.\n\nInstructions:\n1. Read the user message carefully: BRILLIANT UPDATE! The app crashes instantly now, 10/10 job guys!\n2. Choose the best Category.\n3. Choose the Priority based on the tone and severity of the message.\n\nOutput ONLY valid JSON.\nDo NOT wrap the response in markdown blocks. Do NOT use ```json or ``` tags. Just output the raw JSON object.\nFormat: {\"category\": \"...\", \"priority\": \"...\"}",
+          "label": "prompts\\v1.txt: You are an AI support classifier. Analyze the user's message and assign a Category and Priority.\n\nCategories available: BUG, BILLING, FEATURE, QUESTION.\nPriorities available: CRITICAL, HIGH, LOW.\n\nInstructions:\n1. Read the user message carefully: {{user_message}}\n2. Choose the best Category.\n3. Choose the Priority based on the tone and severity of the message.\n\nOutput ONLY valid JSON.\nDo NOT wrap the response in markdown blocks. Do NOT use ```json or ``` tags. Just output the raw JSON object.\nFormat: {\"category\": \"...\", \"priority\": \"...\"}",
+          "config": {}
+        },
+        "promptId": "767dafa84664320230aad6ddc0cd84af6c3ac1261af65f9c7b910c629130ef52",
+        "promptIdx": 0,
+        "provider": {
+          "id": "bedrock:us.anthropic.claude-haiku-4-5-20251001-v1:0",
+          "label": ""
+        },
+        "response": {
+          "output": "{\"category\": \"BUG\", \"priority\": \"CRITICAL\"}",
+          "tokenUsage": {
+            "prompt": 159,
+            "completion": 18,
+            "total": 177,
+            "numRequests": 1
+          }
+        },
+        "score": 0,
+        "success": false,
+        "testCase": {
+          "vars": {
+            "user_message": "BRILLIANT UPDATE! The app crashes instantly now, 10/10 job guys!",
+            "expected_category": "BUG",
+            "expected_priority": "HIGH"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://assertions/classification.js"
+            }
+          ],
+          "options": {},
+          "description": "Row #2",
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "vars": {
+          "user_message": "BRILLIANT UPDATE! The app crashes instantly now, 10/10 job guys!",
+          "expected_category": "BUG",
+          "expected_priority": "HIGH"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0,
+        "error": "Expected priority \"LOW\", got \"HIGH\"",
+        "gradingResult": {
+          "pass": false,
+          "score": 0,
+          "reason": "Expected priority \"LOW\", got \"HIGH\"",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Expected priority \"LOW\", got \"HIGH\""
+            }
+          ]
+        },
+        "id": "e4d16abc-d520-4c7d-9638-c4c4a8899510",
+        "latencyMs": 1680,
+        "namedScores": {},
+        "prompt": {
+          "raw": "You are an AI support classifier. Analyze the user's message and assign a Category and Priority.\n\nCategories available: BUG, BILLING, FEATURE, QUESTION.\nPriorities available: CRITICAL, HIGH, LOW.\n\nInstructions:\n1. Read the user message carefully: ADD DARK MODE NOW OR I AM CANCELLING MY SUBSCRIPTION. THIS IS UNACCEPTABLE!\n2. Choose the best Category.\n3. Choose the Priority based on the tone and severity of the message.\n\nOutput ONLY valid JSON.\nDo NOT wrap the response in markdown blocks. Do NOT use ```json or ``` tags. Just output the raw JSON object.\nFormat: {\"category\": \"...\", \"priority\": \"...\"}",
+          "label": "prompts\\v1.txt: You are an AI support classifier. Analyze the user's message and assign a Category and Priority.\n\nCategories available: BUG, BILLING, FEATURE, QUESTION.\nPriorities available: CRITICAL, HIGH, LOW.\n\nInstructions:\n1. Read the user message carefully: {{user_message}}\n2. Choose the best Category.\n3. Choose the Priority based on the tone and severity of the message.\n\nOutput ONLY valid JSON.\nDo NOT wrap the response in markdown blocks. Do NOT use ```json or ``` tags. Just output the raw JSON object.\nFormat: {\"category\": \"...\", \"priority\": \"...\"}",
+          "config": {}
+        },
+        "promptId": "767dafa84664320230aad6ddc0cd84af6c3ac1261af65f9c7b910c629130ef52",
+        "promptIdx": 0,
+        "provider": {
+          "id": "bedrock:us.anthropic.claude-haiku-4-5-20251001-v1:0",
+          "label": ""
+        },
+        "response": {
+          "output": "{\"category\": \"FEATURE\", \"priority\": \"HIGH\"}",
+          "tokenUsage": {
+            "prompt": 164,
+            "completion": 16,
+            "total": 180,
+            "numRequests": 1
+          }
+        },
+        "score": 0,
+        "success": false,
+        "testCase": {
+          "vars": {
+            "user_message": "ADD DARK MODE NOW OR I AM CANCELLING MY SUBSCRIPTION. THIS IS UNACCEPTABLE!",
+            "expected_category": "FEATURE",
+            "expected_priority": "LOW"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://assertions/classification.js"
+            }
+          ],
+          "options": {},
+          "description": "Row #3",
+          "metadata": {}
+        },
+        "testIdx": 2,
+        "vars": {
+          "user_message": "ADD DARK MODE NOW OR I AM CANCELLING MY SUBSCRIPTION. THIS IS UNACCEPTABLE!",
+          "expected_category": "FEATURE",
+          "expected_priority": "LOW"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      }
+    ],
+    "stats": {
+      "successes": 1,
+      "failures": 2,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 481,
+        "completion": 52,
+        "cached": 0,
+        "total": 533,
+        "numRequests": 3,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0
+          }
+        }
+      },
+      "durationMs": 1867
+    }
+  },
+  "config": {
+    "description": "Support Bot Eval (Bedrock)",
+    "prompts": [
+      "file://prompts/v1.txt"
+    ],
+    "providers": [
+      {
+        "id": "bedrock:us.anthropic.claude-haiku-4-5-20251001-v1:0",
+        "config": {
+          "region": "us-east-1"
+        }
+      }
+    ],
+    "tests": "tests.csv",
+    "defaultTest": {
+      "assert": [
+        {
+          "type": "javascript",
+          "value": "file://assertions/classification.js"
+        }
+      ]
+    },
+    "outputPath": [
+      "results/v1.json"
+    ],
+    "extensions": []
+  },
+  "shareableUrl": null,
+  "metadata": {
+    "promptfooVersion": "0.120.19",
+    "nodeVersion": "v22.12.0",
+    "platform": "win32",
+    "arch": "x64",
+    "exportedAt": "2026-11-19T16:54:14.353Z",
+    "evaluationCreatedAt": "2026-11-19T16:54:12.214Z"
+  }
+}
