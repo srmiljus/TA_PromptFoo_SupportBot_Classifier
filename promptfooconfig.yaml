@@ -1,7 +1,7 @@
 description: "Support Bot Eval (Bedrock)"
 
 prompts:
-  - file://prompts/v2.txt
+  - file://prompts/v3.txt
 
 providers:
   - id: bedrock:us.anthropic.claude-haiku-4-5-20251001-v1:0
